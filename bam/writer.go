@@ -26,7 +26,7 @@ type Writer struct {
 // NewWriter returns a new Writer using the given SAM header. Write
 // concurrency is set to wc.
 func NewWriter(w io.Writer, h *sam.Header, wc int) (*Writer, error) {
-	return NewWriterLevel(w, h, gzip.DefaultCompression, wc)
+	return NewWriterLevel(w, h, gzip.BestSpeed, wc)
 }
 
 func makeWriter(w io.Writer, level, wc int) (*bgzf.Writer, error) {
